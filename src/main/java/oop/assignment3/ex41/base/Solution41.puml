@@ -1,0 +1,13 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Gradebook {
+    student scores
+    aggregated scores
+
+    // behaviour
+    lookupStudentGrades()
+    removeStudent()
+
+}
+@enduml
