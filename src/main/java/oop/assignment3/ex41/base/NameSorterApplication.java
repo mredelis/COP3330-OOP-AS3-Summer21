@@ -5,49 +5,33 @@ package oop.assignment3.ex41.base;
  *  Copyright 2021 Edelis Molina
  */
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Scanner;
 
 public class NameSorterApplication {
+
     public static void main(String[] args) {
-        // Open file exercise41_input.txt
-        // Read each line into an List until the end of file
+
+        // Open file exercise41.txt from the resources folder
+        String inputPath = "src/main/resources/exercise41_input.txt";
+        ReadFileContent reader = new ReadFileContent();
+
+        // Read each line into a List until the end of file
+        ArrayList<String> namesList = reader.readContent(inputPath);
+
+        // Create output file to write the sorted names
+        String outputPath = "src/main/resources/exercise41_output.txt";
+        WriteToFile writer  = new WriteToFile();
+
         // Sort the List of names
-        // Create exercise41_output.txt file for the output
-        // Print the sorted List of names to the output file
-            // Print total of names
-            // Print line of '-' separators
-            // Print names in sorted order
-        ArrayList<String> myList = new ArrayList<>();
+        String sortedNames = writer.sortContent(namesList);
 
-        try {
-            File myObj = new File("C:\\Users\\EDELITA\\Desktop\\OOPExercises\\assignment3\\src\\main\\java\\oop\\assignment3\\ex41\\exercise41_input.txt");
-            Scanner myReader = new Scanner(myObj);
-            while (myReader.hasNextLine()){
+        // Get total number of names
+        int numberOfNames = writer.numberOfNames(namesList);
 
-                myList.add(myReader.nextLine());
-//                System.out.println(myList);
-            }
-        } catch (FileNotFoundException e){
-            System.out.println("An error has occurred");
-            e.printStackTrace();
-
-        }
-
-//        System.out.println(myList);
-
-        for(int i = 0; i < myList.size(); i++)
-            System.out.println(myList.get(i));
-
-        Collections.sort(myList);
-
-        System.out.println();
-
-        for(int i = 0; i < myList.size(); i++)
-            System.out.println(myList.get(i));
+        // Write the total number of names and the names sorted to the exercise41_output.txt file
+        String content = "Total of " + numberOfNames + " names\n-----------------\n" + sortedNames;
+        writer.writeToFile(content, outputPath);
 
     }
+
 }

@@ -5,3 +5,5 @@ Jones, Chris
 Jones, Aaron
 Swift, Geoffrey
 Xiong, Fong
+Matt, Hewitt
+Jacinda, Arden
