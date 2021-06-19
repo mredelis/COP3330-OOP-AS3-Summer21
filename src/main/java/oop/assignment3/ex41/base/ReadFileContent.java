@@ -3,7 +3,6 @@ package oop.assignment3.ex41.base;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class ReadFileContent {
