@@ -1,21 +1,19 @@
 {
-  "firstName": "John",
-  "lastName": "Smith",
-  "age": 25,
-  "address": {
-    "streetAddress": "21 2nd Street",
-    "city": "New York",
-    "state": "NY",
-    "postalCode": 10021
-  },
-  "phoneNumbers": [
+  "products" : [
     {
-      "type": "home",
-      "number": "212 555-1234"
+      "name": "Widget",
+      "price": 25.00,
+      "quantity": 5
     },
     {
-      "type": "fax",
-      "number": "646 555-4567"
+      "name": "Thing",
+      "price": 15.00,
+      "quantity": 5
+    },
+    {
+      "name": "Doodad",
+      "price": 5.00,
+      "quantity": 10
     }
   ]
 }
