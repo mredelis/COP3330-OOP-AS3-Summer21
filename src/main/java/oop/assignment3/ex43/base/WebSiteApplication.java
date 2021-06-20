@@ -20,9 +20,6 @@ public class WebSiteApplication {
         String path = "src/main/java/oop/assignment3/ex43/base/website/";
         fileApp.createFiles(path, name, author, js, css);
 
-
-
-
     }
 
     public String getUserInput(String prompt){
