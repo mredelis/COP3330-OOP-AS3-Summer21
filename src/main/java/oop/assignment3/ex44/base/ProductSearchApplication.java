@@ -21,7 +21,7 @@ public class ProductSearchApplication {
         ProductSearchApplication app = new ProductSearchApplication();
 
         // Read JSON from file
-        BufferedReader br = new BufferedReader(new FileReader("src/main/resources/exercise44_input.json"));
+        BufferedReader br = new BufferedReader(new FileReader("InputFiles/exercise44_input.json"));
         String line;
         StringBuilder strBuilderObj = new StringBuilder();
         while ((line = br.readLine()) != null){
@@ -29,7 +29,6 @@ public class ProductSearchApplication {
         }
 
         String originalJson = strBuilderObj.toString();
-        System.out.println(originalJson);
 
         // Gson Object
         Gson gson = new Gson();

@@ -15,11 +15,11 @@ class FileGeneratorTest {
     void createFiles_Test() {
         FileGenerator fgenApp = new FileGenerator();
 
-        String path = "src/test/resources/website/";
-        String parentDir = "src/test/resources/website/awesomeco/";
-        String htmlFile = "src/test/resources/website/awesomeco/index.html";
-        String jsDir = "src/test/resources/website/awesomeco/js";
-        String cssDir = "src/test/resources/website/awesomeco/css";
+        String path = "OutputFiles/Website/";
+        String parentDir = "OutputFiles/Website/awesomeco/";
+        String htmlFile = "OutputFiles/Website/awesomeco/index.html";
+        String jsDir = "OutputFiles/Website/awesomeco/js";
+        String cssDir = "OutputFiles/Website/awesomeco/css";
 
         fgenApp.createFiles(path, "awesomeco", "Max Power", "Y", "Y");
 

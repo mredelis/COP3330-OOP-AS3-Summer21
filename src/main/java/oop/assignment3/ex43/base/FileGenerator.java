@@ -75,7 +75,7 @@ public class FileGenerator {
                 if(fJS.mkdir())
                     System.out.println("Created " + fJS.getPath());
                 else
-                    System.out.println("Error creating the js directory!");
+                    System.out.println("Directory " + fJS.getPath() + " already exists!");
         }
 
         // Create css directory if required
@@ -87,7 +87,7 @@ public class FileGenerator {
                 if(fCSS.mkdir())
                     System.out.println("Created " + fCSS.getPath());
                 else
-                    System.out.println("Error creating the css directory!");
+                    System.out.println("Directory " + fCSS.getPath() + " already exists!");
         }
     }
 }

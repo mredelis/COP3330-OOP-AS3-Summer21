@@ -11,7 +11,7 @@ public class ParsingApplication {
     public static void main(String[] args) {
 
         // Open file exercise42.txt from the resources folder
-        String inputPath = "src/main/resources/exercise42_input.txt";
+        String inputPath = "InputFiles/exercise42_input.txt";
         ReadFile fp = new ReadFile();
 
         // Read each Line into a String array until the end of file

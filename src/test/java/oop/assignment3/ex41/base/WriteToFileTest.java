@@ -14,15 +14,10 @@ import static org.junit.jupiter.api.Assertions.*;
 class WriteToFileTest {
 
     ReadFileContent readApp = new ReadFileContent();
-    ArrayList<String> testNameList = readApp.readContent("src/test/resources/exercise41_input_Test.txt");
+    ArrayList<String> testNameList = readApp.readContent("InputFiles/exercise41_input_Test.txt");
 
     WriteToFile writeApp = new WriteToFile();
 
-    @Test
-    void numberOfNames() {
-        int actual = writeApp.numberOfNames(testNameList);
-        assertEquals(3, actual);
-    }
 
     @Test
     void sortContent() {
@@ -39,12 +34,12 @@ class WriteToFileTest {
         String contentToWrite = "Total of " + writeApp.numberOfNames(testNameList) + " names\n-----------------\n" + writeApp.sortContent(testNameList);
 
         // Write String content to the file
-        writeApp.writeToFile(contentToWrite, "src/test/resources/exercise41_output_Test.txt");
+        writeApp.writeToFile(contentToWrite, "OutputFiles/exercise41_output_Test.txt");
 
         // Read in content written into an String and compare with String contentToWrite
         String contentRead = "";
         try {
-            contentRead = new String(Files.readAllBytes(Paths.get("src/test/resources/exercise41_output_Test.txt")));
+            contentRead = new String(Files.readAllBytes(Paths.get("OutputFiles/exercise41_output_Test.txt")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -56,7 +51,7 @@ class WriteToFileTest {
     @Test
     @DisplayName("Test if file exists")
     public void writeFile_TestExists(){
-        File file = new File("src/test/resources/exercise41_output_Test.txt");
+        File file = new File("OutputFiles/exercise41_output.txt");
         assertTrue(file.exists());
     }
 }

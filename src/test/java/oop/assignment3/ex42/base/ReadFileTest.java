@@ -15,7 +15,7 @@ class ReadFileTest {
     void readContent_Test() {
         ReadFile reader = new ReadFile();
 
-        List<String[]> actual = reader.readContent("src/test/resources/exercise42_input_Test.txt");
+        List<String[]> actual = reader.readContent("InputFiles/exercise42_input_Test.txt");
 
         String[] line1 = {"Holmes", "Michelle", "55900"};
         String[] line2 = {"Haynes", "Christina", "56500"};
@@ -34,7 +34,7 @@ class ReadFileTest {
     @Test
     void createFormattedString_Test() {
         ReadFile reader = new ReadFile();
-        List<String[]> actualListArray = reader.readContent("src/test/resources/exercise42_input_Test.txt");
+        List<String[]> actualListArray = reader.readContent("InputFiles/exercise42_input_Test.txt");
         String actual = reader.createFormattedString(actualListArray);
 
         String exp1 = String.format("%-10s%-10s%-10s\n", "Holmes", "Michelle", "55900");

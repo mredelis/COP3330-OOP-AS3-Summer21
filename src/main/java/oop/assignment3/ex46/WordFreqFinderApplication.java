@@ -12,7 +12,7 @@ public class WordFreqFinderApplication {
     public static void main(String[] args) {
 
         // Read in content of the input file as a String and split the text into a String Array of words
-        String inputPath = "src/main/resources/exercise46_input.txt";
+        String inputPath = "InputFiles/exercise46_input.txt";
         InputFile ifClass = new InputFile();
         String[] wordsArray = ifClass.readFileAsStringArrayOfWords(inputPath);
 

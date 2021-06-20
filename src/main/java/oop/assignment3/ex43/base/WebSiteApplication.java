@@ -22,7 +22,7 @@ public class WebSiteApplication {
         String css = app.getUserInput("Do you want a folder for CSS? (y/n) ");
 
         // Path of the working directory of my program
-        String path = "src/main/java/oop/assignment3/ex43/base/website/";
+        String path = "OutputFiles/Website/";
         fileApp.createFiles(path, name, author, js, css);
 
     }

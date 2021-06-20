@@ -13,7 +13,7 @@ public class WordFinderApplication {
     public static void main(String[] args) {
 
         // Open file exercise41.txt from the resources folder
-        String inputPath = "src/main/resources/exercise45_input.txt";
+        String inputPath = "InputFiles/exercise45_input.txt";
 
         FileProcessing fp = new FileProcessing();
         // Read text in input file as String
@@ -28,7 +28,7 @@ public class WordFinderApplication {
 
         // Path to the directory to create the file
         String fileName = buffer + ".txt";
-        String path = "src/main/resources";
+        String path = "OutputFiles";
 
         // Create file in the specified directory and write the modified string
         fp.writeModStringToFile(path, fileName, modifiedString);

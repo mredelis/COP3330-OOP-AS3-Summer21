@@ -16,7 +16,7 @@ class InputFileTest {
     @DisplayName("Convert the text in the input file to a String Array of words ")
     void readFileAsStringArrayOfWords_Test() {
         InputFile iFile = new InputFile();
-        String[] actual = iFile.readFileAsStringArrayOfWords("src/test/resources/exercise46_input_Test.txt");
+        String[] actual = iFile.readFileAsStringArrayOfWords("InputFiles/exercise46_input_Test.txt");
         String[] expected = {"orange", "apple", "banana", "apple", "peach", "peach", "orange", "orange", "apple", "apple"};
 
         assertArrayEquals(expected, actual);

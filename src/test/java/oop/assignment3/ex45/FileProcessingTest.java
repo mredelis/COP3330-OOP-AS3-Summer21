@@ -19,7 +19,7 @@ class FileProcessingTest {
     void readFileAsString_Test() {
         FileProcessing fp = new FileProcessing();
 
-        String actual = fp.readFileAsString("src/test/resources/exercise45_input_Test.txt");
+        String actual = fp.readFileAsString("InputFiles/exercise45_input_Test.txt");
 
         assertEquals("She is kind. She is brave", actual);
     }
@@ -40,7 +40,7 @@ class FileProcessingTest {
         // String to write to the file
         String content = "She was kind. She was brave and smart";
 
-        String dirPath = "src/test/resources";
+        String dirPath = "OutputFiles";
 
         // In the application class the .txt is appended to the file name entered by the user
         String fileName = "exercise45_output_Test.txt";
@@ -51,7 +51,7 @@ class FileProcessingTest {
         // Read in content written into the file and compare with String content
         String contentRead = "";
         try {
-            contentRead = new String(Files.readAllBytes(Paths.get("src/test/resources/exercise45_output_Test.txt")));
+            contentRead = new String(Files.readAllBytes(Paths.get("OutputFiles/exercise45_output_Test.txt")));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,7 +63,7 @@ class FileProcessingTest {
     @Test
     @DisplayName("Test if file exists")
     public void Test_if_File_was_Created(){
-        File file = new File("src/test/resources/exercise45_output_Test.txt");
+        File file = new File("OutputFiles/exercise45_output_Test.txt");
         assertTrue(file.exists());
     }
 }
