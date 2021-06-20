@@ -1,17 +1,15 @@
 package oop.assignment3.ex44.base;
 
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Edelis Molina
+ */
 
 import com.google.gson.*;
 
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.Iterator;
-import java.util.Locale;
-import java.util.Map;
 import java.util.Scanner;
 
 public class ProductSearchApplication {
@@ -22,7 +20,7 @@ public class ProductSearchApplication {
 
         ProductSearchApplication app = new ProductSearchApplication();
 
-        // Read JSON from file // consider moving to a method
+        // Read JSON from file
         BufferedReader br = new BufferedReader(new FileReader("src/main/resources/exercise44_input.json"));
         String line;
         StringBuilder strBuilderObj = new StringBuilder();
@@ -31,57 +29,47 @@ public class ProductSearchApplication {
         }
 
         String originalJson = strBuilderObj.toString();
-        System.out.println("Original JSON: " + originalJson);
+        System.out.println(originalJson);
 
         // Gson Object
         Gson gson = new Gson();
         GeneralInfo generalInfoObject = gson.fromJson(originalJson, GeneralInfo.class);
 
-//        for(int i = 0; i < generalInfoObject.products.size(); i++)
-//            System.out.println(generalInfoObject.products.get(i).name);
-
-
-        boolean isOnTheList;
+        boolean isOnTheList = false;
+        int productIdx;
         String product;
         do {
             System.out.print("What is the product name? ");
             product = in.nextLine();
-            isOnTheList = app.isProductOnTheList(product, generalInfoObject);
+
+            productIdx = app.getProductIndexOnTheList(product, generalInfoObject);
+            if(productIdx < 0)
+                System.out.println("Sorry, that product was not found in our inventory.");
+            else
+                isOnTheList = true;
+
         } while (!isOnTheList);
 
-
-
-
-
-
-
-
+        String output = app.printProductInformation(productIdx, generalInfoObject);
+        System.out.println(output);
     }
 
-
-    public boolean isProductOnTheList(String product, GeneralInfo generalInfoObject) {
-        for (int i = 0; i < generalInfoObject.products.size(); i++) {
-            if (generalInfoObject.products.get(i).name.equals(product)) {
-                return true;
+    // Return the index of the Product Object on the array
+    // If product name is not on the List return -1
+    public int getProductIndexOnTheList(String product, GeneralInfo generalInfoObject) {
+        for (int idx = 0; idx < generalInfoObject.products.size(); idx++) {
+            if (generalInfoObject.products.get(idx).name.equals(product)) {
+                return idx;
             }
         }
-        System.out.println("Sorry, that product was not found in our inventory.");
-        return false;
+        return -1;
     }
 
-    public String printProductInformation(String product, GeneralInfo generalInfoObject){
-        for(int i = 0; i<generalInfoObject.products.size(); i++){
-            if(generalInfoObject.products.get(i).name.equals(product))
-                return String.format("Name: %s\nPrice: %f\nQuantity: %d", generalInfoObject.products.get(i).name,
-                                                                          generalInfoObject.products.get(i).price,
-                                                                          generalInfoObject.products.get(i).quantity);
-        }
+    public String printProductInformation(int productIdx, GeneralInfo generalInfoObject){
+        return String.format("Name: %s\nPrice: %.2f\nQuantity: %d", generalInfoObject.products.get(productIdx).name,
+                                                                    generalInfoObject.products.get(productIdx).price,
+                                                                    generalInfoObject.products.get(productIdx).quantity);
     }
-
-
-
-
-
 
 }
 

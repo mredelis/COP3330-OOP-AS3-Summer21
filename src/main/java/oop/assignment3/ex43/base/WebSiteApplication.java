@@ -1,5 +1,10 @@
 package oop.assignment3.ex43.base;
 
+/*
+ *  UCF COP3330 Summer 2021 Assignment 3 Solution
+ *  Copyright 2021 Edelis Molina
+ */
+
 import java.util.Scanner;
 
 public class WebSiteApplication {
