@@ -1,0 +1,23 @@
+@startuml
+
+class NameSorterApplication{
+
+    String inputPath
+    String outputPath
+    ArrayList<String> nameList
+
+    + readContent(inputPath)
+    + sortContent(nameList)
+    + numberOfNames(nameList)
+}
+
+class ReadFileContent{
+    + readContent()
+}
+
+class WriteToFile{
+    + numberOfNames()
+    + sortContent()
+    + writeToFile()
+}
+@enduml

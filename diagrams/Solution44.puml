@@ -1,0 +1,31 @@
+@startuml
+
+class ProductSearchApplication{
+    isOnTheList : boolean
+    generalInfoObject: GeneralInfo
+    product: String
+    originalJson: String
+
+
+    + getProductIndexOnTheList()
+    + printProductInformation()
+
+
+}
+
+ProductSearchApplication <|-- GeneralInfo
+GeneralInfo <|-- Product
+
+
+class GeneralInfo{
+    List<Product> products
+}
+
+class Product{
+    name : String
+    price : double
+    quantity : int
+}
+
+
+@enduml

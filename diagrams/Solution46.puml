@@ -1,0 +1,17 @@
+@startuml
+
+class WordFreqFinderApplication{
+    inputPath: String
+    String[] wordsArray
+    Map<String, Integer> freqMap
+
+   + readFileAsStringArrayOfWords(inputPath)
+   + createMap(wordsArray)
+   + sortByValue(freqMap)
+}
+
+class InputFile{
+    + readFileAsStringArrayOfWords()
+}
+
+@enduml

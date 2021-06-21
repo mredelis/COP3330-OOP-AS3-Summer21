@@ -1,0 +1,24 @@
+@startuml
+
+class WevSiteApplication{
+    name: String
+    author: String
+    js: String
+    css: String
+    path: String
+
+    + getUserInput()
+    + createFiles(path, name, author, js, css)
+
+}
+
+class FileGenerator{
+    htmlContent: String
+
+    + createFiles()
+    + createParentDirectory()
+    + createIndexHtmlFile()
+    + createJavaScriptDirectory()
+    + createCSSDirectory()
+}
+@enduml

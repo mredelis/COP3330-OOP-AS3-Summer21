@@ -1,0 +1,20 @@
+@startuml
+
+class WordFinderApplication{
+    inputPath : String
+    fileName : String
+    path : String
+
+    + readFileAsString(inputPath)
+    + replaceText(modifiedString)
+    + writeModifiedStringToFile(path, fileName, modifiedString)
+
+}
+
+class FileProcessing{
+    + readFileAsString()
+    + replaceText()
+    + writeModifiedStringToFile()
+}
+
+@enduml

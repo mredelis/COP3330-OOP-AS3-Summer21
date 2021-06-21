@@ -1,0 +1,16 @@
+@startuml
+
+class ParsingApplication{
+    String inputPath
+    List<String[]> csvLines
+
+    + readContent(inputPath)
+    + createFormattedString(csvLines)
+}
+
+class ReadFile{
+    + readContent()
+    + createFormattedString()
+
+}
+@enduml
