@@ -11,6 +11,8 @@ class WordFinderApplication{
 
 }
 
+WordFinderApplication ..|> FileProcessing
+
 class FileProcessing{
     + readFileAsString()
     + replaceText()

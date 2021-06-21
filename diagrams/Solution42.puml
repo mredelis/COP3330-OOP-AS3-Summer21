@@ -8,6 +8,8 @@ class ParsingApplication{
     + createFormattedString(csvLines)
 }
 
+ParsingApplication ..|> ReadFile
+
 class ReadFile{
     + readContent()
     + createFormattedString()

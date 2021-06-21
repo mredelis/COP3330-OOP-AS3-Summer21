@@ -10,6 +10,8 @@ class WordFreqFinderApplication{
    + sortByValue(freqMap)
 }
 
+WordFreqFinderApplication ..|> InputFile
+
 class InputFile{
     + readFileAsStringArrayOfWords()
 }

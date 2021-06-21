@@ -1,6 +1,6 @@
 @startuml
 
-class WevSiteApplication{
+class WebSiteApplication{
     name: String
     author: String
     js: String
@@ -11,6 +11,8 @@ class WevSiteApplication{
     + createFiles(path, name, author, js, css)
 
 }
+
+WebSiteApplication ..|> FileGenerator
 
 class FileGenerator{
     htmlContent: String

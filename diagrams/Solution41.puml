@@ -11,6 +11,9 @@ class NameSorterApplication{
     + numberOfNames(nameList)
 }
 
+NameSorterApplication ..|> ReadFileContent
+NameSorterApplication ..|> WriteToFile
+
 class ReadFileContent{
     + readContent()
 }
